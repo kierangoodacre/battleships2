@@ -44,6 +44,18 @@ Given(/^I enter a coordinate "(.*?)"$/) do |arg1|
   fill_in('coord', with: arg1)
 end
 
+Given(/^I am on loadgame page$/) do
+  visit '/loadgame'
+end
+
+Given(/^I click on placeship$/) do
+  click_on("place ship")
+end
+
+Then(/^the ship should be placed on the board$/) do
+ expect(page).to have_content "Ship"
+end
+
 
 
 

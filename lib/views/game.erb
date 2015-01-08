@@ -1,10 +1,23 @@
 <table border="1" style="width:5%">
 
+	<% if @place_ship == "A5" %>
+		Ship
+	<% elsif @place_ship %>
+		Water
+
+	<% else %>	
+	<form action="/game">
+		<input type="text" name="ship">
+		<button type="submit">place ship</button>
+	</form>
+
+	<% end %>
+
 
 <% @keys.each_slice(10) do |slice| %>
   <tr>
-  <% slice.each do |board| %>
-    <td><%= board %></td>
+  <% slice.each do |water| %>
+    <td><button type="submit"><%= water %></button></td>
     <%end%>
   </tr>
 <% end %>
